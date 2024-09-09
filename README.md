@@ -19,7 +19,7 @@ This AIC Journey creates a custom Prefill URL containing the PII data of the use
    2. [https://docs.iddataweb.com/reference/authorize](https://docs.iddataweb.com/reference/authorize)  
 3. AIC Redirects to IDDW using the IDDW Prefill URL generated above.  
 4. Once you complete the IDDW verification workflow, you are Redirected back to AIC with a one-time token.  
-   1. For example: https://*\<AIC URL\>*/am/XUI**?code=xQ5Ld5PDIRz8N1S8xw-qLiLu827qyRdPcbHaOnnfWgA**  
+   1. For example: https://*\<AIC URL\>*/am/XUI?code=xQ5Ld5PDIRz8N1S8xw-qLiLu827qyRdPcbHaOnnfWgA  
 5. You exchange this token (via a "back channel" API call) in order to retrieve the transaction details (i.e. id\_token and access\_token).  
    1. The /token response is a JSON Web Token, and will include all authentication and verification results configured by the client  
    2. [https://docs.iddataweb.com/reference/token](https://docs.iddataweb.com/reference/token)  
