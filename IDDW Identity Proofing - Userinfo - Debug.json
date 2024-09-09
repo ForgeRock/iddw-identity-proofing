@@ -1,0 +1,674 @@
+{
+  "meta": {
+    "origin": "https://openam-tntp-iddw.forgeblocks.com/platform/?realm=alpha#/journeys",
+    "exportedBy": "jasonveinot@pingidentity.com",
+    "exportDate": "2024-08-27T20:15:13.147Z",
+    "exportTool": "platform-admin ui tree export",
+    "exportToolVersion": "1.0",
+    "treesSelectedForExport": [
+      "IDDW Identity Proofing - Userinfo - Debug"
+    ],
+    "innerTreesIncluded": []
+  },
+  "trees": {
+    "IDDW Identity Proofing - Userinfo - Debug": {
+      "tree": {
+        "_id": "IDDW Identity Proofing - Userinfo - Debug",
+        "_rev": "-1802240435",
+        "identityResource": "managed/alpha_user",
+        "uiConfig": {
+          "categories": "[]"
+        },
+        "entryNodeId": "e1d5252d-03ea-4e05-b534-98b0f7789346",
+        "innerTreeOnly": false,
+        "nodes": {
+          "9fcaf48e-9efc-4b88-90cc-decfc51d2d8a": {
+            "x": 1020,
+            "y": 46.921875,
+            "connections": {
+              "true": "61247df7-91e6-439d-92d7-ba101718a444"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          },
+          "e1d5252d-03ea-4e05-b534-98b0f7789346": {
+            "x": 223,
+            "y": 44.921875,
+            "connections": {
+              "ERROR": "e301438c-0bd0-429c-ab0c-66126501069a",
+              "NOMATCHRESPONSE": "b9d41180-781e-4b47-bb96-ac755869ed1e"
+            },
+            "nodeType": "RESTNode",
+            "displayName": "AXN Admin /token"
+          },
+          "b09a4a0c-da15-42a5-88e2-0819e27ac110": {
+            "x": 733,
+            "y": 310.921875,
+            "connections": {
+              "ERROR": "e301438c-0bd0-429c-ab0c-66126501069a",
+              "NOMATCHRESPONSE": "0c35609d-36b3-416e-9bed-7f088ec90f56"
+            },
+            "nodeType": "RESTNode",
+            "displayName": "AXN Gateway /userinfo"
+          },
+          "12a2164e-6225-4867-9ceb-85aa8dce5231": {
+            "x": 1561,
+            "y": 49.921875,
+            "connections": {
+              "true": "c05237e1-ddac-4336-be18-4a58cc3b6ae8"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          },
+          "61247df7-91e6-439d-92d7-ba101718a444": {
+            "x": 1306,
+            "y": 50.421875,
+            "connections": {
+              "Success": "12a2164e-6225-4867-9ceb-85aa8dce5231",
+              "Failure": "033847c3-a1af-449c-ad22-d14ddace5170"
+            },
+            "nodeType": "ScriptedDecisionNode",
+            "displayName": "IDDW Redirect"
+          },
+          "6ca7374d-e498-4950-8760-3511687b4591": {
+            "x": 711,
+            "y": 45.921875,
+            "connections": {
+              "ERROR": "e301438c-0bd0-429c-ab0c-66126501069a",
+              "NOMATCHRESPONSE": "9fcaf48e-9efc-4b88-90cc-decfc51d2d8a"
+            },
+            "nodeType": "RESTNode",
+            "displayName": "AXN Admin /verification/link"
+          },
+          "c05237e1-ddac-4336-be18-4a58cc3b6ae8": {
+            "x": 137,
+            "y": 304.921875,
+            "connections": {
+              "ERROR": "e301438c-0bd0-429c-ab0c-66126501069a",
+              "NOMATCHRESPONSE": "fdf88f8e-9bd5-442b-b368-6a1b74b17cf0"
+            },
+            "nodeType": "RESTNode",
+            "displayName": "AXN Gateway /token"
+          },
+          "033847c3-a1af-449c-ad22-d14ddace5170": {
+            "x": 1560,
+            "y": 199.421875,
+            "connections": {
+              "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          },
+          "fdf88f8e-9bd5-442b-b368-6a1b74b17cf0": {
+            "x": 410,
+            "y": 306.921875,
+            "connections": {
+              "true": "b09a4a0c-da15-42a5-88e2-0819e27ac110"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          },
+          "b9d41180-781e-4b47-bb96-ac755869ed1e": {
+            "x": 466,
+            "y": 49.921875,
+            "connections": {
+              "true": "6ca7374d-e498-4950-8760-3511687b4591"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          },
+          "0c35609d-36b3-416e-9bed-7f088ec90f56": {
+            "x": 1051,
+            "y": 306.921875,
+            "connections": {
+              "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          }
+        },
+        "staticNodes": {
+          "startNode": {
+            "x": 57,
+            "y": 64
+          },
+          "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+            "x": 1431,
+            "y": 446
+          },
+          "e301438c-0bd0-429c-ab0c-66126501069a": {
+            "x": 732,
+            "y": 739
+          }
+        },
+        "enabled": true
+      },
+      "nodes": {
+        "9fcaf48e-9efc-4b88-90cc-decfc51d2d8a": {
+          "_id": "9fcaf48e-9efc-4b88-90cc-decfc51d2d8a",
+          "_rev": "-969401439",
+          "nodes": [
+            {
+              "_id": "8e8d3ba5-a967-4377-9c52-b0933c4db6c7",
+              "nodeType": "ScriptedDecisionNode",
+              "displayName": "Debug"
+            }
+          ],
+          "pageDescription": {},
+          "pageHeader": {
+            "en": "AXN Admin /verification/link"
+          },
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "e1d5252d-03ea-4e05-b534-98b0f7789346": {
+          "_id": "e1d5252d-03ea-4e05-b534-98b0f7789346",
+          "_rev": "-1928184524",
+          "basicAuthnPassword": "&{esv.iddw.admin.password}",
+          "restURL": "https://preprod.admin.iddataweb.com/axnadmin-core/token",
+          "bodyType": "JSON",
+          "queryParamsMap": {
+            "grant_type": "client_credentials"
+          },
+          "basicAuthn": true,
+          "privateKey": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----",
+          "jpToSSMapper": {
+            "admin_access_token": "$.access_token"
+          },
+          "requestMode": "POST",
+          "disableCertChecks": false,
+          "usemTLS": false,
+          "basicAuthnUsername": "&{esv.iddw.admin.username}",
+          "headersMap": {},
+          "jpToOutcomeMapper": {},
+          "publicCert": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
+          "timeout": 30,
+          "responseCodes": [],
+          "_type": {
+            "_id": "RESTNode",
+            "name": "HTTP Client",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "NOMATCHRESPONSE",
+              "displayName": "Default Response"
+            },
+            {
+              "id": "ERROR",
+              "displayName": "Error"
+            }
+          ]
+        },
+        "b09a4a0c-da15-42a5-88e2-0819e27ac110": {
+          "_id": "b09a4a0c-da15-42a5-88e2-0819e27ac110",
+          "_rev": "2084730648",
+          "restURL": "https://preprod1.iddataweb.com/axn/oauth2/userInfo",
+          "bodyType": "JSON",
+          "queryParamsMap": {},
+          "basicAuthn": false,
+          "privateKey": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----",
+          "jpToSSMapper": {
+            "policy_decision": "$.policyDecisionObject.conclusion",
+            "username": "$.sub"
+          },
+          "requestMode": "POST",
+          "disableCertChecks": false,
+          "usemTLS": false,
+          "headersMap": {
+            "Authorization": "Bearer ${gateway_access_token}"
+          },
+          "jpToOutcomeMapper": {},
+          "publicCert": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
+          "timeout": 30,
+          "responseCodes": [],
+          "_type": {
+            "_id": "RESTNode",
+            "name": "HTTP Client",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "NOMATCHRESPONSE",
+              "displayName": "Default Response"
+            },
+            {
+              "id": "ERROR",
+              "displayName": "Error"
+            }
+          ]
+        },
+        "12a2164e-6225-4867-9ceb-85aa8dce5231": {
+          "_id": "12a2164e-6225-4867-9ceb-85aa8dce5231",
+          "_rev": "1924347253",
+          "nodes": [
+            {
+              "_id": "205f0642-a3f0-4bf8-9a38-9350911d5b53",
+              "nodeType": "ScriptedDecisionNode",
+              "displayName": "Debug"
+            }
+          ],
+          "pageDescription": {},
+          "pageHeader": {
+            "en": "Return from IDDW Redirect - Success"
+          },
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "61247df7-91e6-439d-92d7-ba101718a444": {
+          "_id": "61247df7-91e6-439d-92d7-ba101718a444",
+          "_rev": "1442705447",
+          "script": "3ac3e454-a953-4165-8366-b7d244ca5f1a",
+          "outcomes": [
+            "Success",
+            "Failure"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "Success",
+              "displayName": "Success"
+            },
+            {
+              "id": "Failure",
+              "displayName": "Failure"
+            }
+          ]
+        },
+        "6ca7374d-e498-4950-8760-3511687b4591": {
+          "_id": "6ca7374d-e498-4950-8760-3511687b4591",
+          "_rev": "-766558116",
+          "restURL": "https://preprod.admin.iddataweb.com/service-configuration/self-service/verification/link",
+          "bodyType": "JSON",
+          "payload": "{ \"apiKey\": \"&{esv.iddw.client.id}\", \"redirectURL\": \"&{esv.iddw.redirecturl}\", \"credential\": \"${username}\", \"IDP\": \"PingIdentity\", \"country\": \"${country}\", \"userAttributes\": [ { \"attributeType\": \"FullName\", \"values\": { \"fname\": \"${givenName}\", \"lname\": \"${sn}\" } }, { \"attributeType\": \"Email\", \"values\": { \"email\": \"${mail}\" } }, { \"attributeType\": \"InternationalAddress\", \"values\": { \"street_number\": \"${street_number}\", \"route\": \"${street}\", \"locality\": \"${city}\", \"postal_code\": \"${zip}\", \"administrative_area_level_1\": \"${state}\", \"country\": \"${country}\" } }, { \"attributeType\": \"InternationalTelephone\", \"values\": { \"dialCode\": \"${dialCode}\", \"telephone\": \"${mobileNumber}\" } } ] }",
+          "queryParamsMap": {},
+          "basicAuthn": false,
+          "privateKey": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----",
+          "jpToSSMapper": {
+            "prefill_url": "$.url"
+          },
+          "requestMode": "POST",
+          "disableCertChecks": false,
+          "usemTLS": false,
+          "headersMap": {
+            "Authorization": "Bearer ${admin_access_token}"
+          },
+          "jpToOutcomeMapper": {},
+          "publicCert": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
+          "timeout": 30,
+          "responseCodes": [],
+          "_type": {
+            "_id": "RESTNode",
+            "name": "HTTP Client",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "NOMATCHRESPONSE",
+              "displayName": "Default Response"
+            },
+            {
+              "id": "ERROR",
+              "displayName": "Error"
+            }
+          ]
+        },
+        "c05237e1-ddac-4336-be18-4a58cc3b6ae8": {
+          "_id": "c05237e1-ddac-4336-be18-4a58cc3b6ae8",
+          "_rev": "188834030",
+          "restURL": "https://preprod1.iddataweb.com/axn/oauth2/token",
+          "bodyType": "XWWWFORMURLENCODED",
+          "payload": "grant_type=authorization_code&code=${gateway_auth_token}&redirect_uri=&{esv.iddw.redirecturl}&client_id=&{esv.iddw.client.id}&client_secret=&{esv.iddw.client.secret}",
+          "queryParamsMap": {},
+          "basicAuthn": false,
+          "privateKey": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----",
+          "jpToSSMapper": {
+            "id_token": "$.id_token"
+          },
+          "requestMode": "POST",
+          "disableCertChecks": false,
+          "usemTLS": false,
+          "headersMap": {},
+          "jpToOutcomeMapper": {},
+          "publicCert": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
+          "timeout": 30,
+          "responseCodes": [],
+          "_type": {
+            "_id": "RESTNode",
+            "name": "HTTP Client",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "NOMATCHRESPONSE",
+              "displayName": "Default Response"
+            },
+            {
+              "id": "ERROR",
+              "displayName": "Error"
+            }
+          ]
+        },
+        "033847c3-a1af-449c-ad22-d14ddace5170": {
+          "_id": "033847c3-a1af-449c-ad22-d14ddace5170",
+          "_rev": "569233598",
+          "nodes": [
+            {
+              "_id": "2c50b1d5-6422-4e52-b3d5-eff2a5b6fcec",
+              "nodeType": "ScriptedDecisionNode",
+              "displayName": "Debug"
+            }
+          ],
+          "pageDescription": {},
+          "pageHeader": {
+            "en": "Return from IDDW Redirect - Failure"
+          },
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "fdf88f8e-9bd5-442b-b368-6a1b74b17cf0": {
+          "_id": "fdf88f8e-9bd5-442b-b368-6a1b74b17cf0",
+          "_rev": "566556151",
+          "nodes": [
+            {
+              "_id": "71c4c7ca-c17d-47b5-8640-eac80fb957ef",
+              "nodeType": "ScriptedDecisionNode",
+              "displayName": "Debug"
+            }
+          ],
+          "pageDescription": {},
+          "pageHeader": {
+            "en": "AXN Gateway /token"
+          },
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "b9d41180-781e-4b47-bb96-ac755869ed1e": {
+          "_id": "b9d41180-781e-4b47-bb96-ac755869ed1e",
+          "_rev": "-377358099",
+          "nodes": [
+            {
+              "_id": "04a41035-05e2-4711-ab88-2a8515e3356e",
+              "nodeType": "ScriptedDecisionNode",
+              "displayName": "Debug"
+            }
+          ],
+          "pageDescription": {},
+          "pageHeader": {
+            "en": "AXN Admin /token"
+          },
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "0c35609d-36b3-416e-9bed-7f088ec90f56": {
+          "_id": "0c35609d-36b3-416e-9bed-7f088ec90f56",
+          "_rev": "108863640",
+          "nodes": [
+            {
+              "_id": "e0cf0dc9-2780-44cb-b987-264c6aa30b10",
+              "nodeType": "ScriptedDecisionNode",
+              "displayName": "Debug"
+            }
+          ],
+          "pageDescription": {},
+          "pageHeader": {
+            "en": "AXN Gateway /userinfo"
+          },
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        }
+      },
+      "innerNodes": {
+        "8e8d3ba5-a967-4377-9c52-b0933c4db6c7": {
+          "_id": "8e8d3ba5-a967-4377-9c52-b0933c4db6c7",
+          "_rev": "44711248",
+          "script": "5f2ec923-38f0-44cf-9d0e-15f9ed6ddf29",
+          "outcomes": [
+            "true"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "205f0642-a3f0-4bf8-9a38-9350911d5b53": {
+          "_id": "205f0642-a3f0-4bf8-9a38-9350911d5b53",
+          "_rev": "-723331762",
+          "script": "5f2ec923-38f0-44cf-9d0e-15f9ed6ddf29",
+          "outcomes": [
+            "true"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "2c50b1d5-6422-4e52-b3d5-eff2a5b6fcec": {
+          "_id": "2c50b1d5-6422-4e52-b3d5-eff2a5b6fcec",
+          "_rev": "1208593263",
+          "script": "5f2ec923-38f0-44cf-9d0e-15f9ed6ddf29",
+          "outcomes": [
+            "true"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "71c4c7ca-c17d-47b5-8640-eac80fb957ef": {
+          "_id": "71c4c7ca-c17d-47b5-8640-eac80fb957ef",
+          "_rev": "1498478052",
+          "script": "5f2ec923-38f0-44cf-9d0e-15f9ed6ddf29",
+          "outcomes": [
+            "true"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "04a41035-05e2-4711-ab88-2a8515e3356e": {
+          "_id": "04a41035-05e2-4711-ab88-2a8515e3356e",
+          "_rev": "1034654764",
+          "script": "5f2ec923-38f0-44cf-9d0e-15f9ed6ddf29",
+          "outcomes": [
+            "true"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "e0cf0dc9-2780-44cb-b987-264c6aa30b10": {
+          "_id": "e0cf0dc9-2780-44cb-b987-264c6aa30b10",
+          "_rev": "755691934",
+          "script": "5f2ec923-38f0-44cf-9d0e-15f9ed6ddf29",
+          "outcomes": [
+            "true"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        }
+      },
+      "scripts": {
+        "3ac3e454-a953-4165-8366-b7d244ca5f1a": {
+          "_id": "3ac3e454-a953-4165-8366-b7d244ca5f1a",
+          "name": "IDDW Prefill PII Redirect",
+          "description": null,
+          "script": "\"(function() {\\n  try {\\n    var redirectMethod = \\\"GET\\\";\\n    var redirectUrl = nodeState.get(\\\"prefill_url\\\");\\n\\n    if (!requestParameters.get(\\\"code\\\")) {\\n      callbacksBuilder.redirectCallback(redirectUrl, {}, redirectMethod, true);\\n    } else {\\n      var gateway_auth_token = requestParameters.get(\\\"code\\\").get(0);\\n      nodeState.putShared(\\\"gateway_auth_token\\\", gateway_auth_token);\\n      action.goTo('Success');\\n    }\\n  }\\n  catch (error) {\\n    nodeState.putShared(\\\"errorMessage\\\", error.toString());\\n    action.goTo('Failure').withErrorMessage(error);\\n  }\\n}());\"",
+          "default": false,
+          "language": "JAVASCRIPT",
+          "context": "AUTHENTICATION_TREE_DECISION_NODE",
+          "createdBy": "null",
+          "creationDate": 0,
+          "lastModifiedBy": "null",
+          "lastModifiedDate": 0,
+          "evaluatorVersion": "2.0"
+        },
+        "5f2ec923-38f0-44cf-9d0e-15f9ed6ddf29": {
+          "_id": "5f2ec923-38f0-44cf-9d0e-15f9ed6ddf29",
+          "name": "Debug",
+          "description": "null",
+          "script": "\"var fr = JavaImporter(\\n  org.forgerock.openam.auth.node.api,\\n  javax.security.auth.callback.TextOutputCallback\\n);\\n\\noutcome = \\\"true\\\";\\n\\nwith (fr) {\\n  if (callbacks.isEmpty()) {\\n    var seperatorCB = new TextOutputCallback(TextOutputCallback.INFORMATION, \\\"================================\\\");\\n    var sharedStateCB = new TextOutputCallback(TextOutputCallback.INFORMATION, \\\"sharedState: \\\" + sharedState.toString());\\n    var transientStateCB = new TextOutputCallback(TextOutputCallback.INFORMATION, \\\"transientState: \\\" + transientState.toString());\\n    //var securedStateCB = new TextOutputCallback(TextOutputCallback.INFORMATION, \\\"securedState: \\\" + nodeState.get(\\\"password\\\").asString());\\n    var requestHeadersCB = new TextOutputCallback(TextOutputCallback.INFORMATION, \\\"requestHeaders: \\\" + requestHeaders.toString());\\n    var theCallbacks = [sharedStateCB, seperatorCB, transientStateCB, seperatorCB, requestHeadersCB];\\n    action = Action.send(theCallbacks).build();\\n  } else {\\n    action = Action.goTo(\\\"true\\\").build();\\n  }\\n}\"",
+          "default": false,
+          "language": "JAVASCRIPT",
+          "context": "AUTHENTICATION_TREE_DECISION_NODE",
+          "createdBy": "null",
+          "creationDate": 0,
+          "lastModifiedBy": "null",
+          "lastModifiedDate": 0,
+          "evaluatorVersion": "1.0"
+        }
+      },
+      "emailTemplates": {},
+      "socialIdentityProviders": {},
+      "themes": [],
+      "saml2Entities": {},
+      "circlesOfTrust": {}
+    }
+  }
+}

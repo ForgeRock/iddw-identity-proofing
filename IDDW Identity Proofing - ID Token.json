@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "origin": "https://openam-tntp-iddw.forgeblocks.com/platform/?realm=alpha#/journeys",
+    "exportedBy": "jasonveinot@pingidentity.com",
+    "exportDate": "2024-08-27T20:14:59.138Z",
+    "exportTool": "platform-admin ui tree export",
+    "exportToolVersion": "1.0",
+    "treesSelectedForExport": [
+      "IDDW Identity Proofing - ID Token"
+    ],
+    "innerTreesIncluded": []
+  },
+  "trees": {
+    "IDDW Identity Proofing - ID Token": {
+      "tree": {
+        "_id": "IDDW Identity Proofing - ID Token",
+        "_rev": "-5169732",
+        "identityResource": "managed/alpha_user",
+        "uiConfig": {
+          "categories": "[]"
+        },
+        "entryNodeId": "e1d5252d-03ea-4e05-b534-98b0f7789346",
+        "innerTreeOnly": false,
+        "nodes": {
+          "e1d5252d-03ea-4e05-b534-98b0f7789346": {
+            "x": 210,
+            "y": 137.5,
+            "connections": {
+              "ERROR": "e301438c-0bd0-429c-ab0c-66126501069a",
+              "NOMATCHRESPONSE": "6ca7374d-e498-4950-8760-3511687b4591"
+            },
+            "nodeType": "RESTNode",
+            "displayName": "AXN Admin /token"
+          },
+          "61247df7-91e6-439d-92d7-ba101718a444": {
+            "x": 731,
+            "y": 137.5,
+            "connections": {
+              "Success": "c05237e1-ddac-4336-be18-4a58cc3b6ae8"
+            },
+            "nodeType": "ScriptedDecisionNode",
+            "displayName": "IDDW Redirect"
+          },
+          "6ca7374d-e498-4950-8760-3511687b4591": {
+            "x": 440,
+            "y": 137.5,
+            "connections": {
+              "ERROR": "e301438c-0bd0-429c-ab0c-66126501069a",
+              "NOMATCHRESPONSE": "61247df7-91e6-439d-92d7-ba101718a444"
+            },
+            "nodeType": "RESTNode",
+            "displayName": "AXN Admin /verification/link"
+          },
+          "c05237e1-ddac-4336-be18-4a58cc3b6ae8": {
+            "x": 961,
+            "y": 137.5,
+            "connections": {
+              "ERROR": "e301438c-0bd0-429c-ab0c-66126501069a",
+              "NOMATCHRESPONSE": "ed02b665-5b72-4a46-b53a-5083bdc2e662"
+            },
+            "nodeType": "RESTNode",
+            "displayName": "AXN Gateway /token"
+          },
+          "ed02b665-5b72-4a46-b53a-5083bdc2e662": {
+            "x": 1201,
+            "y": 137.5,
+            "connections": {
+              "Success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+              "Failure": "e301438c-0bd0-429c-ab0c-66126501069a"
+            },
+            "nodeType": "ScriptedDecisionNode",
+            "displayName": "IDDW ID Token Validation / Decode"
+          }
+        },
+        "staticNodes": {
+          "startNode": {
+            "x": 70,
+            "y": 155
+          },
+          "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+            "x": 1537,
+            "y": 153
+          },
+          "e301438c-0bd0-429c-ab0c-66126501069a": {
+            "x": 933,
+            "y": 489
+          }
+        },
+        "enabled": true
+      },
+      "nodes": {
+        "e1d5252d-03ea-4e05-b534-98b0f7789346": {
+          "_id": "e1d5252d-03ea-4e05-b534-98b0f7789346",
+          "_rev": "-1928184524",
+          "basicAuthnPassword": "&{esv.iddw.admin.password}",
+          "restURL": "https://preprod.admin.iddataweb.com/axnadmin-core/token",
+          "bodyType": "JSON",
+          "queryParamsMap": {
+            "grant_type": "client_credentials"
+          },
+          "basicAuthn": true,
+          "privateKey": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----",
+          "jpToSSMapper": {
+            "admin_access_token": "$.access_token"
+          },
+          "requestMode": "POST",
+          "disableCertChecks": false,
+          "usemTLS": false,
+          "basicAuthnUsername": "&{esv.iddw.admin.username}",
+          "headersMap": {},
+          "jpToOutcomeMapper": {},
+          "publicCert": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
+          "timeout": 30,
+          "responseCodes": [],
+          "_type": {
+            "_id": "RESTNode",
+            "name": "HTTP Client",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "NOMATCHRESPONSE",
+              "displayName": "Default Response"
+            },
+            {
+              "id": "ERROR",
+              "displayName": "Error"
+            }
+          ]
+        },
+        "61247df7-91e6-439d-92d7-ba101718a444": {
+          "_id": "61247df7-91e6-439d-92d7-ba101718a444",
+          "_rev": "1442705447",
+          "script": "3ac3e454-a953-4165-8366-b7d244ca5f1a",
+          "outcomes": [
+            "Success",
+            "Failure"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "Success",
+              "displayName": "Success"
+            },
+            {
+              "id": "Failure",
+              "displayName": "Failure"
+            }
+          ]
+        },
+        "6ca7374d-e498-4950-8760-3511687b4591": {
+          "_id": "6ca7374d-e498-4950-8760-3511687b4591",
+          "_rev": "-766558116",
+          "restURL": "https://preprod.admin.iddataweb.com/service-configuration/self-service/verification/link",
+          "bodyType": "JSON",
+          "payload": "{ \"apiKey\": \"&{esv.iddw.client.id}\", \"redirectURL\": \"&{esv.iddw.redirecturl}\", \"credential\": \"${username}\", \"IDP\": \"PingIdentity\", \"country\": \"${country}\", \"userAttributes\": [ { \"attributeType\": \"FullName\", \"values\": { \"fname\": \"${givenName}\", \"lname\": \"${sn}\" } }, { \"attributeType\": \"Email\", \"values\": { \"email\": \"${mail}\" } }, { \"attributeType\": \"InternationalAddress\", \"values\": { \"street_number\": \"${street_number}\", \"route\": \"${street}\", \"locality\": \"${city}\", \"postal_code\": \"${zip}\", \"administrative_area_level_1\": \"${state}\", \"country\": \"${country}\" } }, { \"attributeType\": \"InternationalTelephone\", \"values\": { \"dialCode\": \"${dialCode}\", \"telephone\": \"${mobileNumber}\" } } ] }",
+          "queryParamsMap": {},
+          "basicAuthn": false,
+          "privateKey": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----",
+          "jpToSSMapper": {
+            "prefill_url": "$.url"
+          },
+          "requestMode": "POST",
+          "disableCertChecks": false,
+          "usemTLS": false,
+          "headersMap": {
+            "Authorization": "Bearer ${admin_access_token}"
+          },
+          "jpToOutcomeMapper": {},
+          "publicCert": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
+          "timeout": 30,
+          "responseCodes": [],
+          "_type": {
+            "_id": "RESTNode",
+            "name": "HTTP Client",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "NOMATCHRESPONSE",
+              "displayName": "Default Response"
+            },
+            {
+              "id": "ERROR",
+              "displayName": "Error"
+            }
+          ]
+        },
+        "c05237e1-ddac-4336-be18-4a58cc3b6ae8": {
+          "_id": "c05237e1-ddac-4336-be18-4a58cc3b6ae8",
+          "_rev": "188834030",
+          "restURL": "https://preprod1.iddataweb.com/axn/oauth2/token",
+          "bodyType": "XWWWFORMURLENCODED",
+          "payload": "grant_type=authorization_code&code=${gateway_auth_token}&redirect_uri=&{esv.iddw.redirecturl}&client_id=&{esv.iddw.client.id}&client_secret=&{esv.iddw.client.secret}",
+          "queryParamsMap": {},
+          "basicAuthn": false,
+          "privateKey": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----",
+          "jpToSSMapper": {
+            "id_token": "$.id_token"
+          },
+          "requestMode": "POST",
+          "disableCertChecks": false,
+          "usemTLS": false,
+          "headersMap": {},
+          "jpToOutcomeMapper": {},
+          "publicCert": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
+          "timeout": 30,
+          "responseCodes": [],
+          "_type": {
+            "_id": "RESTNode",
+            "name": "HTTP Client",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "NOMATCHRESPONSE",
+              "displayName": "Default Response"
+            },
+            {
+              "id": "ERROR",
+              "displayName": "Error"
+            }
+          ]
+        },
+        "ed02b665-5b72-4a46-b53a-5083bdc2e662": {
+          "_id": "ed02b665-5b72-4a46-b53a-5083bdc2e662",
+          "_rev": "727565524",
+          "script": "d3871bc3-143d-43a0-8be8-8666cde89670",
+          "outcomes": [
+            "Success",
+            "Failure"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "Success",
+              "displayName": "Success"
+            },
+            {
+              "id": "Failure",
+              "displayName": "Failure"
+            }
+          ]
+        }
+      },
+      "innerNodes": {},
+      "scripts": {
+        "3ac3e454-a953-4165-8366-b7d244ca5f1a": {
+          "_id": "3ac3e454-a953-4165-8366-b7d244ca5f1a",
+          "name": "IDDW Prefill PII Redirect",
+          "description": null,
+          "script": "\"(function() {\\n  try {\\n    var redirectMethod = \\\"GET\\\";\\n    var redirectUrl = nodeState.get(\\\"prefill_url\\\");\\n\\n    if (!requestParameters.get(\\\"code\\\")) {\\n      callbacksBuilder.redirectCallback(redirectUrl, {}, redirectMethod, true);\\n    } else {\\n      var gateway_auth_token = requestParameters.get(\\\"code\\\").get(0);\\n      nodeState.putShared(\\\"gateway_auth_token\\\", gateway_auth_token);\\n      action.goTo('Success');\\n    }\\n  }\\n  catch (error) {\\n    nodeState.putShared(\\\"errorMessage\\\", error.toString());\\n    action.goTo('Failure').withErrorMessage(error);\\n  }\\n}());\"",
+          "default": false,
+          "language": "JAVASCRIPT",
+          "context": "AUTHENTICATION_TREE_DECISION_NODE",
+          "createdBy": "null",
+          "creationDate": 0,
+          "lastModifiedBy": "null",
+          "lastModifiedDate": 0,
+          "evaluatorVersion": "2.0"
+        },
+        "d3871bc3-143d-43a0-8be8-8666cde89670": {
+          "_id": "d3871bc3-143d-43a0-8be8-8666cde89670",
+          "name": "IDDW ID Token Validation / Decode",
+          "description": null,
+          "script": "\"(function () {\\n  try {\\n    var jwtData = {\\n      jwtType: \\\"SIGNED\\\",\\n      issuer: systemEnv.getProperty(\\\"esv.iddw.jwt.issuer\\\"),\\n      audience: systemEnv.getProperty(\\\"esv.iddw.client.id\\\"),\\n      signingKey: systemEnv.getProperty(\\\"esv.iddw.signingkey\\\")\\n    };\\n\\n    var assertionJwt = nodeState.get(\\\"id_token\\\");\\n\\n    if (assertionJwt !== null && assertionJwt.length > 0) {\\n      jwtData[\\\"jwt\\\"] = assertionJwt;\\n      var jwtClaims = jwtValidator.validateJwtClaims(jwtData);\\n      if (jwtClaims !== null) {\\n        var policyDecision = jwtClaims.get(\\\"policyDecision\\\");\\n        nodeState.putShared(\\\"policyDecision\\\", policyDecision);\\n        action.goTo('Success');\\n      } else {\\n        action.goTo('Failure').withErrorMessage(\\\"Invalid JWT claims\\\");\\n      }\\n    } else {\\n      action.goTo('Failure').withErrorMessage(\\\"Error getting assertionJwt\\\");\\n    }\\n  }\\n  catch (error) {\\n    nodeState.putShared(\\\"errorMessage\\\", error.toString());\\n    action.goTo('Failure').withErrorMessage(error);\\n  }\\n}());\"",
+          "default": false,
+          "language": "JAVASCRIPT",
+          "context": "AUTHENTICATION_TREE_DECISION_NODE",
+          "createdBy": "null",
+          "creationDate": 0,
+          "lastModifiedBy": "null",
+          "lastModifiedDate": 0,
+          "evaluatorVersion": "2.0"
+        }
+      },
+      "emailTemplates": {},
+      "socialIdentityProviders": {},
+      "themes": [],
+      "saml2Entities": {},
+      "circlesOfTrust": {}
+    }
+  }
+}
